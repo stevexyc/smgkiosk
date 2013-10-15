@@ -1,0 +1,61 @@
+<template name="directory">
+	<div class="container" id="directory-main">
+		<div id="background-home">
+			<img id="bgimg" src="directory.jpg">
+		</div>
+		<div class="box" id="branding">
+			<img style="width:200px; margin-top:20px;" src="bulogo.png">
+			<h1>School of Management Directory</h1>
+		</div>
+	<div class="container" id="directory-wrap">
+	{{#isolate}}
+	<div class="section-container accordion" data-section="accordion" id="directory">
+	{{#each person}}
+	  <section class='zperson' id="{{_id}}">
+	    <p class="title" data-section-title>
+			<a name="{{wtf}}">{{lastname}}, {{firstname}}</a></p>
+	    <div class="content" data-section-content>
+	    	<div class="row">
+	    		<div class="small-3 columns profilepic">
+	    			<img src="http://smgapps.bu.edu/images/facstaff/{{pubkey}}.jpg" onError="this.onerror=null;this.src='http://smgapps.bu.edu/images/profile_grfx/nophoto.png';">
+
+	    		</div>
+				<div class="profiletxt">
+					<div>{{title}}</div>
+					<div>{{dept}}</div>
+					<div>{{#if room}} Room: {{room}} {{/if}}</div>
+					<div>{{phone}}</div>
+					<div>{{email}}</div>
+				</div>	
+				{{#if room}}
+				<div class="mapbtn">
+					<button class="button map">Map</button>
+					<!-- <a href="#" data-reveal-id="myModal">Click Me For A Modal</a> -->
+				</div>
+				{{/if}}
+			</div>
+	    </div>
+	  </section>
+	{{/each}}
+	</div>
+	{{/isolate}}
+	<ul id="ppl-nav">
+		{{#each alpha}}
+			<li><div class="button alph">{{this}}</div></li>
+		{{/each}}
+	</ul>
+	</div>
+	{{#isolate}}
+	<div id="myModal" class="reveal-modal">
+	  <h4>{{thisinfo}}</h4>
+	  <img style="width:100%;" src="{{mapsrc}}">
+	  <a class="close-reveal-modal">&#215;</a>
+	</div>
+	{{/isolate}}
+
+	
+	{{> nav}}
+	</div>
+</template>
+
+

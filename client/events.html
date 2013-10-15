@@ -1,0 +1,22 @@
+<template name="events">
+	<div class="container" id="events-home">
+		<!-- <div id="events-img">
+			<img id="eventsbg" src="events.jpg">
+		</div> -->
+		<div id="background-home">
+			<img id="bgimg" src="events.jpg">
+		</div>
+		<div class="box" id="branding">
+			<img style="width:200px; margin-top:20px;" src="bulogo.png">
+			<h1>School of Management Events</h1>
+		</div>
+		{{#isolate}}
+		<ul id="eventCal">
+		 	{{#each calItem}}
+		 		<li><h3>{{title}}</h3>{{zdate}}<br>{{location}}</li>
+		 	{{/each}}
+		 </ul>
+		{{/isolate}}
+	</div>
+	{{> nav}}
+</template>

@@ -1,0 +1,27 @@
+<template name="home">
+	{{#isolate}}
+	<div id="background-home">
+		<!-- <img id="bgimg" src="{{bgImage}}"> -->
+		<img class="bgimg active" src="/0.jpg">
+		<img class="bgimg" src="/1.jpg">
+		<img class="bgimg" src="/2.jpg">
+		<img class="bgimg" src="/3.jpg">
+	</div>
+	{{/isolate}}
+	<div class="container" id="container-home">
+		<div class="box" id="branding">
+			<img style="width:200px; margin-top:20px;" src="bulogo.png">
+			<h1>Welcome to School of Management</h1>
+		</div>
+
+		<ul id="homeCal">
+		 	{{#each calItem}}
+		 		<li class="today-events"><h3>{{title}}</h3>{{zdate}}<br>{{location}}</li>
+		 	{{/each}}
+		 </ul>
+
+		{{>nav}}
+		
+	</div>
+</template>
+

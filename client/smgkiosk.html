@@ -1,0 +1,39 @@
+<head>
+<title>smgkiosk</title>
+</head>
+
+<body>
+	{{> appcontrol}}
+</body>
+
+<template name="appcontrol">
+	{{#if home}}
+		{{> home}}
+	{{/if}}
+	{{#if events}}
+		{{> events}}
+	{{/if}}
+	{{#if directory}}
+		{{> directory}}
+	{{/if}}
+	{{#if hours}}
+		{{> hours}}
+	{{/if}}
+	{{#if maps}}
+		{{> maps}}
+	{{/if}}
+	{{#if flags}}
+		{{>flags}}
+	{{/if}}
+</template>
+
+<template name="nav">
+	<div class="box" id="controls">
+		<div id="Welcome">Welcome</div>
+		<div id="Events">Events</div>
+		<div id="Directory">Directory</div>
+		<div id="Hours">Hours</div>
+		<div id="Maps">Maps</div>
+		<div id="Flags">Flags</div>
+	</div>
+</template>
