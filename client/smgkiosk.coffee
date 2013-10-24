@@ -105,7 +105,7 @@ Template.events.calItem = ->
 # 		false
 
 Template.events.zdate = ->
-	tmp = Date.create ( this.date )
+	tmp = Date.create ( this.zdate )
 	# console.log tmp.getHours()
 	if tmp.getHours() is 0
 		tmp.format('{Weekday}, {Month} {dd}')
